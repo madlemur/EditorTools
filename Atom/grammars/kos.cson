@@ -55,7 +55,7 @@
   {
     'comment': 'mathematical constants'
     'name': 'support.constant.kos'
-    'match': '\\b(?i:(e|g|pi))\\b'
+    'match': '\\b(?i:(e|g|pi|c|atmtokpa|kpatoatm|degtorad|radtodeg))\\b'
   }
   {
     'comment': 'language constants'
@@ -152,9 +152,19 @@
     'name': 'variable.parameter.kos'
   }
   {
+      'comment': 'atmosphere function'
+      'match': '\\b(?i:(altitudepressure))'
+      'name': 'support.function.kos'
+  }
+  {
     'comment': 'body structure member'
-    'match': '\\b\\:(?i:(name|description|mass|altitude|rotationperiod|radius|mu|atm|angularvel|geopositionof|altitudeof))\\b'
+    'match': '\\b\\:(?i:(name|description|mass|altitude|rotationperiod|radius|mu|atm|angularvel))\\b'
     'name': 'variable.parameter.kos'
+  }
+  {
+      'comment': 'body functions'
+      'match': '\\b(?i:(geopositionof|geopositionlatlng|altitudeof))'
+      'name': 'support.function.kos'
   }
   {
     'comment': 'aggregateresource structure member'
@@ -173,17 +183,17 @@
   }
   {
     'comment': 'engine structure member'
-    'match': '\\b\\:(?i:(thrustlimit|maxthrust|thrust|fuelflow|isp|flameout|ignition|allowrestart|allowshutdown|throttlelock))\\b'
+    'match': '\\b\\:(?i:(thrustlimit|maxthrust|thrust|availablethrust|fuelflow|isp|vacuumisp|visp|sealevelisp|slisp|flameout|ignition|allowrestart|allowshutdown|throttlelock|multimode|modes|mode|primarymode|autoswitch|hasgimbal|gimbal))\\b'
     'name': 'variable.parameter.kos'
   }
   {
     'comment': 'engine functions'
-    'match': '\\b(?i:(activate|shutdown))'
+    'match': '\\b(?i:(activate|shutdown|maxthrustat|availablethrustat|ispat|togglemode))'
     'name': 'support.function.kos'
   }
   {
     'comment': 'gimbal structure member'
-    'match': '\\b\\:(?i:(range|responsespeed|pitchangle|yawangle|rollangle|lock))\\b'
+    'match': '\\b\\:(?i:(lock|pitch|yaw|roll|limit|range|responsespeed|pitchangle|yawangle|rollangle))\\b'
     'name': 'variable.parameter.kos'
   }
   {
@@ -193,12 +203,12 @@
   }
   {
     'comment': 'part structure member'
-    'match': '\\b\\:(?i:(name|title|mass|drymass|wetmass|tag|controlfrom|stage|uid|rotation|position|facing|resources|targetable|ship|modules|allmodules|parent|hasparent|hasphysics|children))\\b'
+    'match': '\\b\\:(?i:(name|title|mass|drymass|wetmass|tag|stage|uid|rotation|position|facing|resources|targetable|ship|modules|allmodules|parent|hasparent|hasphysics|children))\\b'
     'name': 'variable.parameter.kos'
   }
   {
     'comment': 'part functions'
-    'match': '\\b(?i:(getmodule))'
+    'match': '\\b(?i:(getmodule|getmodulebyindex|hasmodule|controlfrom))'
     'name': 'support.function.kos'
   }
   {
